@@ -10,12 +10,7 @@ public class SafewayHomePage extends BasePageObject{
     private static WebElement signindropdown;
     @FindBy(id = "sign-in-modal-link")
     private static WebElement signinLink;
-    @FindBy(id = "label-email")
-    private static WebElement email;
-    @FindBy(id = "label-password")
-    private static WebElement password;
-    @FindBy(id = "btnSignIn")
-    private static WebElement SIGNIN_BTN;
+
 
     private WebDriver driver;
     public SafewayHomePage(WebDriver driver) {
@@ -23,5 +18,13 @@ public class SafewayHomePage extends BasePageObject{
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
+    }
+    public void goToSignInPage(){
+        signindropdown.click();
+        signinLink.click();
+
+    }
+    public void goToSafewayHomepage(){
+        driver.navigate().to("https://www.safeway.com/");
     }
 }
