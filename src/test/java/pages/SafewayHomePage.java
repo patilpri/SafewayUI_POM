@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import util.TestProperties;
 
 public class SafewayHomePage extends BasePageObject{
     @FindBy(xpath = "//a[@class='menu-nav__profile-button']")
@@ -25,6 +26,8 @@ public class SafewayHomePage extends BasePageObject{
 
     }
     public void goToSafewayHomepage(){
-        driver.navigate().to("https://www.safeway.com/");
+        String url = TestProperties.getVal("Homepage");
+        System.out.println("url:"+url);
+        driver.get(url);
     }
 }
